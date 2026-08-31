@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Saulo Coimbra | Professor de Matemática</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7e8",
+                        "surface-bright": "#fcf8f9",
+                        "on-error-container": "#93000a",
+                        "secondary": "#45645e",
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-tint": "#516169",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c3c7ca",
+                        "tertiary-container": "#393c3d",
+                        "outline": "#73787b",
+                        "primary-fixed": "#d5e5ef",
+                        "primary": "#192830",
+                        "on-secondary-container": "#4b6a63",
+                        "inverse-surface": "#303031",
+                        "on-tertiary-container": "#a5a6a7",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0edee",
+                        "inverse-primary": "#b9c9d3",
+                        "background": "#fcf8f9",
+                        "secondary-container": "#c7eae1",
+                        "surface-container-low": "#f6f3f4",
+                        "surface-variant": "#e5e2e3",
+                        "on-primary-container": "#99a9b2",
+                        "on-secondary-fixed": "#00201b",
+                        "on-tertiary-fixed": "#191c1d",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "surface-container-highest": "#e5e2e3",
+                        "on-surface-variant": "#43474a",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#242628",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1b1c",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#accec5",
+                        "inverse-on-surface": "#f3f0f1",
+                        "on-secondary-fixed-variant": "#2d4c46",
+                        "primary-container": "#2f3e46",
+                        "surface-dim": "#dcd9da",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "secondary-fixed": "#c7eae1",
+                        "on-background": "#1b1b1c",
+                        "surface": "#fcf8f9",
+                        "accent-warm": "#e05638",
+                        "accent-warm-hover": "#c94527"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Montserrat"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-metric": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-metric": ["14px", { "lineHeight": "1.0", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --accent-warm: #e05638;
+        }
+
+        /* Sistema de Animações Suaves e Revelação por Seção */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger Delays */
+        .delay-75 {
+            transition-delay: 75ms;
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-150 {
+            transition-delay: 150ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-250 {
+            transition-delay: 250ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-350 {
+            transition-delay: 350ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        /* Divisória de Seção com Transição Suave */
+        .section-transition {
+            position: relative;
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section-transition::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(224, 86, 56, 0.4), transparent);
+            opacity: 0;
+            transform: scaleX(0.4);
+            transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section-transition.is-revealed::before {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .math-grid {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(115, 120, 123, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(115, 120, 123, 0.05) 1px, transparent 1px);
+        }
+
+        .card-border {
+            border: 1px solid var(--outline-variant);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-hover:hover {
+            border-color: #e05638 !important;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -4px rgba(224, 86, 56, 0.14);
+        }
+
+        .icon-accent-hover {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .group:hover .icon-accent-hover,
+        .icon-accent-hover:hover {
+            color: #e05638 !important;
+            transform: scale(1.12);
+        }
+
+        .btn-warm {
+            transition: all 0.3s ease;
+        }
+
+        .btn-warm:hover {
+            background-color: #e05638 !important;
+            border-color: #e05638 !important;
+            color: #ffffff !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-anchor {
+            scroll-margin-top: 80px;
+        }
+
+        /* Sombras e realce para máxima legibilidade do texto da Hero Section */
+        .hero-text-shadow {
+            text-shadow: 0 1px 3px rgba(252, 248, 249, 0.95),
+                0 3px 12px rgba(252, 248, 249, 0.9),
+                0 0 20px rgba(252, 248, 249, 0.8);
+        }
+
+        .dark .hero-text-shadow {
+            text-shadow: 0 1px 3px rgba(27, 27, 28, 0.95),
+                0 3px 14px rgba(0, 0, 0, 0.95),
+                0 0 24px rgba(0, 0, 0, 0.85);
+        }
+
+        .hero-sub-shadow {
+            text-shadow: 0 1px 2px rgba(252, 248, 249, 0.95),
+                0 2px 8px rgba(252, 248, 249, 0.85);
+        }
+
+        .dark .hero-sub-shadow {
+            text-shadow: 0 1px 3px rgba(27, 27, 28, 0.95),
+                0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        @media (max-width: 767px) {
+            #home {
+                min-height: 100vh;
+                min-height: 100svh;
+                padding-top: 1rem;
+                padding-bottom: 2.5rem;
+                position: relative;
+            }
+
+            .hero-photo-container {
+                position: absolute !important;
+                top: 0.5rem !important;
+                left: 0 !important;
+                right: 0 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                width: 100% !important;
+                max-width: 380px !important;
+                height: 52vh !important;
+                max-height: 480px !important;
+                opacity: 0.95;
+                pointer-events: none;
+                z-index: 10;
+                display: flex !important;
+                align-items: flex-end !important;
+                justify-content: center !important;
+            }
+
+            .hero-photo-container #parallax-photo-container {
+                width: auto !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                aspect-ratio: 667 / 1080 !important;
+            }
+
+            .hero-photo-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain !important;
+                object-position: bottom center !important;
+            }
+
+            .hero-text-container {
+                position: relative;
+                z-index: 25;
+                margin-top: 38vh;
+                background: linear-gradient(to top, rgba(252, 248, 249, 0.98) 75%, rgba(252, 248, 249, 0.88) 90%, transparent 100%);
+                padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+                border-radius: 1.25rem 1.25rem 0 0;
+            }
+
+            .dark .hero-text-container {
+                background: linear-gradient(to top, rgba(27, 27, 28, 0.98) 75%, rgba(27, 27, 28, 0.88) 90%, transparent 100%);
+            }
+        }
+
+        @media (min-width: 766px) and (max-width: 956px) {
+            .hero-title {
+                font-size: 30px !important;
+                line-height: 1.16 !important;
+            }
+
+            .hero-subtitle {
+                font-size: 16px !important;
+                line-height: 1.35 !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #home {
+                padding-left: 54px !important;
+                padding-right: 54px !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md antialiased math-grid min-h-screen relative">
+    <!-- TopNavBar -->
+    <nav
+        class="bg-surface dark:bg-inverse-surface text-primary dark:text-primary-fixed w-full sticky top-0 z-50 border-b border-outline-variant dark:border-on-tertiary-container flat no shadows transition-all duration-200 linear">
+        <div class="flex justify-between items-center h-16 px-gutter max-w-max-width mx-auto">
+            <div
+                class="font-headline-sm text-headline-sm tracking-tighter text-on-surface dark:text-inverse-on-surface">
+                SAULO COIMBRA</div>
+            <div class="hidden lg:flex gap-6 font-label-caps text-label-caps" id="nav-links">
+                <a class="nav-item text-primary dark:text-primary-fixed border-b-2 border-accent-warm pb-1 font-semibold transition-all duration-300"
+                    href="#home">Início</a>
+                <a class="nav-item text-on-surface-variant dark:text-on-tertiary-container border-b-2 border-transparent hover:text-accent-warm transition-all duration-300 pb-1"
+                    href="#projects">Projetos</a>
+                <a class="nav-item text-on-surface-variant dark:text-on-tertiary-container border-b-2 border-transparent hover:text-accent-warm transition-all duration-300 pb-1"
+                    href="#education">Formação</a>
+                <a class="nav-item text-on-surface-variant dark:text-on-tertiary-container border-b-2 border-transparent hover:text-accent-warm transition-all duration-300 pb-1"
+                    href="#workshops">Ministradas</a>
+                <a class="nav-item text-on-surface-variant dark:text-on-tertiary-container border-b-2 border-transparent hover:text-accent-warm transition-all duration-300 pb-1"
+                    href="#publications">Publicações</a>
+                <a class="nav-item text-on-surface-variant dark:text-on-tertiary-container border-b-2 border-transparent hover:text-accent-warm transition-all duration-300 pb-1"
+                    href="#skills">Habilidades</a>
+            </div>
+            <a class="btn-warm font-label-caps text-label-caps border border-primary px-6 py-2 transition-all duration-300"
+                href="mailto:saulo.acsilva@professor.educacao.pe.gov.br">Contato</a>
+        </div>
+    </nav>
+    <main class="w-full">
+        <!-- Hero Section -->
+        <section
+            class="nav-anchor min-h-[85vh] flex flex-col md:flex-row items-center justify-center relative overflow-hidden pt-6 md:pt-12 pb-12 md:pb-24 w-full px-margin-mobile md:px-gutter"
+            id="home">
+            <div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none" id="threejs-hero-container">
+            </div>
+            <div
+                class="grid grid-cols-4 md:grid-cols-12 gap-6 md:gap-8 w-full max-w-max-width mx-auto relative z-10 items-center md:items-start justify-center min-h-[110vh] md:pt-4">
+                <div
+                    class="col-span-4 md:col-span-6 lg:col-span-7 flex flex-col justify-center items-center text-center md:items-start md:text-left pr-0 md:pr-4 reveal-on-scroll relative z-20 hero-text-container mt-2 md:mt-0 md:pt-2">
+                    <h1
+                        class="hero-title text-3xl sm:text-4xl md:text-[38px] lg:text-[48px] xl:text-[58px] 2xl:text-display-lg font-bold font-display-lg text-primary mb-4 md:mb-6 leading-[1.18] md:leading-[1.12] text-center md:text-left hero-text-shadow">
+                        Prof. Saulo Coimbra
+                        <span
+                            class="hero-subtitle block mt-2 sm:mt-2.5 font-headline-sm text-base sm:text-lg md:text-xl lg:text-2xl text-on-surface-variant font-medium leading-snug hero-sub-shadow">
+                            Acervo de projetos, recursos didáticos e aplicações.
+                        </span>
+                    </h1>
+                    <p
+                        class="font-body-md text-body-md sm:font-body-lg sm:text-body-lg text-on-surface-variant max-w-xl mb-6 md:mb-10 text-center md:text-left mx-auto md:mx-0 border-t-2 border-accent-warm pt-3 md:pt-4 hero-sub-shadow">
+                        Mestre em Educação Matemática e Tecnológica (UFPE) e professor da rede estadual de
+                        Pernambuco. Desenvolvo projetos voltados à formação continuada de docentes, ao estudo de
+                        processos de ensino e aprendizagem em Matemática e ao desenvolvimento de recursos pedagógicos.
+                    </p>
+                    <div class="flex gap-4 justify-center md:justify-start w-full">
+                        <a class="btn-warm inline-block bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 transition-all shadow-md hover:shadow-lg"
+                            href="#projects">EXPLORAR PROJETOS</a>
+                    </div>
+                </div>
+                <div
+                    class="col-span-4 md:col-span-6 lg:col-span-5 flex justify-center items-center md:items-start relative z-10 md:z-20 reveal-on-scroll delay-200 hero-photo-container">
+                    <div id="parallax-photo-container"
+                        class="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[500px] xl:max-w-[580px] aspect-[667/1080] will-change-transform mx-auto md:mt-0">
+                        <img alt="Retrato Saulo Coimbra"
+                            class="w-full h-full object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)] hover:scale-105 transition-transform duration-500"
+                            src="img/photo_portfolio.png" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section
+            class="nav-anchor section-transition py-24 md:py-32 border-t border-outline-variant relative w-full px-margin-mobile md:px-gutter"
+            id="projects">
+            <div class="max-w-max-width mx-auto relative">
+                <h2
+                    class="font-headline-md text-headline-md text-primary mb-16 text-center md:text-left reveal-on-scroll">
+                    <span class="text-accent-warm font-mono-metric mr-3 opacity-90">01 /</span>Projetos
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-100">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="Banco de questões matemáticas"
+                                    style="background-image: url('img/bdquestoes.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                Banco de Questões</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Sistema elaborado em
+                                parceria com Gerdna Martins. O sistema organiza,
+                                categoriza e gerencia questões de Matemática e Língua Portuguesa, para
+                                uso em avaliações e atividades pedagógicas.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">SISTEMA</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">EDUCAÇÃO</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://script.google.com/a/macros/professor.educacao.pe.gov.br/s/AKfycbySLIGRGyZeOnKmpQsXU_o3OEck3kHZu95N8in1LZkFrYzqsfYozUOd9o35e54WGDCl/exec"
+                                target="_blank" rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-150">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="Plataforma de Habilidades e Descritores"
+                                    style="background-image: url('img/plataforma.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                Plataforma de Habilidades e Descritores</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Plataforma desenvolvida
+                                baseada na Revista do professor do CAED. Articula descritores, habilidades e o Currículo
+                                de
+                                Pernambuco.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">DESCRITORES</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">PEDAGOGIA</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://script.google.com/a/macros/professor.educacao.pe.gov.br/s/AKfycbxf1uVkVNJuQmPkvsCrTlhMOqmLHqkcAZ2QiJSDjN3Oy2EFyKZy-9ppDlzXjTiWMUZ0/exec"
+                                target="_blank" rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-150">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="Guia de gráficos" style="background-image: url('img/guia.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                Guia de gráficos</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Site desenvolvido com o
+                                foco em Letramento Estatistico. Criamos um catálogo de gráficos, assistente de escolha,
+                                listamos principais elementos que induzem ao erro e apresentamos um glossário de termos
+                                estatísticos.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">LETRAMENTO</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">ESTATÍSTICA</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://guiadegraficos.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-150">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="Guia de gráficos" style="background-image: url('img/grid.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                Grid Quest</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">O Grid Quest foi
+                                desenvolvido para transformar o aprendizado de matemática em uma jornada visual e
+                                gamificada. O jogo utiliza o conceito de "Unidades de Conhecimento" para levar
+                                o aluno desde a contagem básica de quadradinhos até o domínio de fórmulas complexas e
+                                específicas de escala.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">LETRAMENTO</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">ESTATÍSTICA</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://saulocoimbraa.github.io/grid-quest/" target="_blank"
+                                rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-200">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="μ.pedia" style="background-image: url('img/upedia.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                μ.pedia - Enciclopédia Digital Matemática</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Projeto focado em
+                                letramento matemático, hipertextualidade e demonstrações interativas.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">PROFESSORES</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">ESTUDANTES</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://saulocoimbraa.github.io/u.pedia/index.html" target="_blank"
+                                rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-250">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="Controle de Demandas" style="background-image: url('img/curriculo.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                Currículo de PE - Matemática Digital
+                            </h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Site construído em
+                                parceria com o Prof. Dalvison Neto. Explora a estrutura interna de cada habilidade (1º
+                                ao 9º ano).</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">FUNDAMENTAL</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">CURRÍCULO</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://curriculopemat.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-300">
+                        <div>
+                            <div class="aspect-[4/3] bg-surface-container mb-6 overflow-hidden relative">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    data-alt="Cartilha Digital: Cidadania na Escola"
+                                    style="background-image: url('img/cartilha.jpg')">
+                                </div>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-accent-warm transition-colors">
+                                Cartilha Digital: Cidadania na Escola</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Recurso educacional
+                                interativo para conscientização e vivência da cidadania no ambiente escolar. Elaborado
+                                em
+                                parceria com Regina Santos e Daise Marroquim.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1">CARTILHA</span>
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-3 py-1">CIDADANIA</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-label-caps group-hover:text-accent-warm transition-colors"
+                                href="https://cidadania-escola.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                VER PROJETO <span
+                                    class="material-symbols-outlined ml-2 text-sm icon-accent-hover group-hover:translate-x-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Section 02: Formação Acadêmica e Complementar -->
+        <section
+            class="nav-anchor section-transition py-24 md:py-32 border-t border-outline-variant relative w-full px-margin-mobile md:px-gutter"
+            id="education">
+            <div class="max-w-max-width mx-auto relative">
+                <h2
+                    class="font-headline-md text-headline-md text-primary mb-16 text-center md:text-left reveal-on-scroll">
+                    <span class="text-accent-warm font-mono-metric mr-3 opacity-90">02 /</span>Formação
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Formação Acadêmica (Timeline) -->
+                    <div class="lg:col-span-5 reveal-on-scroll delay-100">
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="material-symbols-outlined text-accent-warm text-2xl">school</span>
+                            <h3 class="font-headline-sm text-headline-sm text-primary">Formação Acadêmica</h3>
+                        </div>
+                        <div class="relative pl-8 border-l border-outline-variant space-y-10">
+                            <div class="relative group reveal-on-scroll delay-150">
+                                <div
+                                    class="absolute -left-[33px] top-1.5 w-2.5 h-2.5 bg-surface border border-accent-warm rounded-full group-hover:bg-accent-warm transition-colors">
+                                </div>
+                                <span
+                                    class="font-mono-metric text-mono-metric text-secondary block mb-1 font-semibold">2020
+                                    — 2022</span>
+                                <h4
+                                    class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-accent-warm transition-colors">
+                                    Mestrado em Educação Matemática e Tecnológica</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant font-medium">UFPE -
+                                    Universidade Federal de Pernambuco</p>
+                                <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm opacity-80">
+                                    Pesquisa focada em tecnologias digitais, inovação pedagógica e ensino da matemática.
+                                </p>
+                            </div>
+                            <div class="relative group reveal-on-scroll delay-200">
+                                <div
+                                    class="absolute -left-[33px] top-1.5 w-2.5 h-2.5 bg-surface border border-accent-warm rounded-full group-hover:bg-accent-warm transition-colors">
+                                </div>
+                                <span
+                                    class="font-mono-metric text-mono-metric text-secondary block mb-1 font-semibold">2012
+                                    — 2016</span>
+                                <h4
+                                    class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-accent-warm transition-colors">
+                                    Licenciatura em Matemática</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant font-medium">UFPE -
+                                    Universidade Federal de Pernambuco</p>
+                                <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm opacity-80">
+                                    Formação docente inicial com foco em metodologias de ensino e raciocínio lógico.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formação Complementar (Lista Elegante) -->
+                    <div class="lg:col-span-7 reveal-on-scroll delay-150">
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="material-symbols-outlined text-accent-warm text-2xl">workspace_premium</span>
+                            <h3 class="font-headline-sm text-headline-sm text-primary">Formação Complementar</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Course Item 1 -->
+                            <div
+                                class="card-border card-hover bg-surface-bright p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group reveal-on-scroll delay-100">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="font-mono-metric text-mono-metric text-secondary font-semibold">2026</span>
+                                        <span class="text-outline">•</span>
+                                        <span
+                                            class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">ENAP</span>
+                                    </div>
+                                    <h4
+                                        class="font-body-lg font-semibold text-primary group-hover:text-accent-warm transition-colors">
+                                        Estatística para Análise de Dados na Administração Pública</h4>
+                                </div>
+                                <div class="flex items-center gap-3 self-start sm:self-center">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container group-hover:bg-accent-warm group-hover:text-white transition-colors font-mono-metric text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                                        ⏱ 25h
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Course Item 2 -->
+                            <div
+                                class="card-border card-hover bg-surface-bright p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group reveal-on-scroll delay-150">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="font-mono-metric text-mono-metric text-secondary font-semibold">2025</span>
+                                        <span class="text-outline">•</span>
+                                        <span
+                                            class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">ENAP</span>
+                                    </div>
+                                    <h4
+                                        class="font-body-lg font-semibold text-primary group-hover:text-accent-warm transition-colors">
+                                        A importância do PNLD
+                                    </h4>
+                                </div>
+                                <div class="flex items-center gap-3 self-start sm:self-center">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container group-hover:bg-accent-warm group-hover:text-white transition-colors font-mono-metric text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                                        ⏱ 30h
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Course Item 3 -->
+                            <div
+                                class="card-border card-hover bg-surface-bright p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group reveal-on-scroll delay-200">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="font-mono-metric text-mono-metric text-secondary font-semibold">2025</span>
+                                        <span class="text-outline">•</span>
+                                        <span
+                                            class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">ENAP</span>
+                                    </div>
+                                    <h4
+                                        class="font-body-lg font-semibold text-primary group-hover:text-accent-warm transition-colors">
+                                        Avaliação em Processos de Aprendizagem e Modelos de Feedback</h4>
+                                </div>
+                                <div class="flex items-center gap-3 self-start sm:self-center">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container group-hover:bg-accent-warm group-hover:text-white transition-colors font-mono-metric text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                                        ⏱ 30h
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Course Item 4 -->
+                            <div
+                                class="card-border card-hover bg-surface-bright p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group reveal-on-scroll delay-250">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="font-mono-metric text-mono-metric text-secondary font-semibold">2025</span>
+                                        <span class="text-outline">•</span>
+                                        <span
+                                            class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">ENAP</span>
+                                    </div>
+                                    <h4
+                                        class="font-body-lg font-semibold text-primary group-hover:text-accent-warm transition-colors">
+                                        Elaboração de Projetos Escolares com Educação Financeira</h4>
+                                </div>
+                                <div class="flex items-center gap-3 self-start sm:self-center">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container group-hover:bg-accent-warm group-hover:text-white transition-colors font-mono-metric text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                                        ⏱ 30h
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Course Item 5 -->
+                            <div
+                                class="card-border card-hover bg-surface-bright p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group reveal-on-scroll delay-200">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="font-mono-metric text-mono-metric text-secondary font-semibold">2024</span>
+                                        <span class="text-outline">•</span>
+                                        <span
+                                            class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">ENAP</span>
+                                    </div>
+                                    <h4
+                                        class="font-body-lg font-semibold text-primary group-hover:text-accent-warm transition-colors">
+                                        Estratégias de Metodologias Ativas</h4>
+                                </div>
+                                <div class="flex items-center gap-3 self-start sm:self-center">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container group-hover:bg-accent-warm group-hover:text-white transition-colors font-mono-metric text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                                        ⏱ 30h
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Course Item 7 -->
+                            <div
+                                class="card-border card-hover bg-surface-bright p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group reveal-on-scroll delay-200">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span
+                                            class="font-mono-metric text-mono-metric text-secondary font-semibold">2022</span>
+                                        <span class="text-outline">•</span>
+                                        <span
+                                            class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">CECINE-UFPE</span>
+                                    </div>
+                                    <h4
+                                        class="font-body-lg font-semibold text-primary group-hover:text-accent-warm transition-colors">
+                                        Curso de Inteligência Artificial e Neurociência na escola: integrando a
+                                        Matemática e a Biologia no Ensino Médio</h4>
+                                </div>
+                                <div class="flex items-center gap-3 self-start sm:self-center">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container group-hover:bg-accent-warm group-hover:text-white transition-colors font-mono-metric text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                                        ⏱ 20h
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 03: Formações Ministradas -->
+        <section
+            class="nav-anchor section-transition py-24 md:py-32 border-t border-outline-variant relative w-full px-margin-mobile md:px-gutter bg-surface-container-lowest"
+            id="workshops">
+            <div class="max-w-max-width mx-auto relative">
+                <div class="reveal-on-scroll">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-4 text-center md:text-left"><span
+                            class="text-accent-warm font-mono-metric mr-3 opacity-90">03 /</span>Formações Ministradas
+                    </h2>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant mb-16 max-w-2xl text-center md:text-left">
+                        Formações elaboradas para professores de Matemática do Ensino Fundamental e Médio.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Workshop Card 1 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-100">
+                        <div>
+                            <!-- Header Thumbnail Cover -->
+                            <div
+                                class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    style="background-image: url('img/justica.jpg')">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/30 flex flex-col justify-between p-4 pointer-events-none">
+                                    <div class="flex justify-between items-center">
+                                        <span
+                                            class="bg-accent-warm text-white font-label-caps text-[10px] px-2.5 py-1 tracking-wider uppercase font-semibold">INTERDISCIPLINAR</span>
+                                        <span
+                                            class="bg-primary/90 text-white font-mono-metric text-xs px-2.5 py-0.5 rounded font-semibold backdrop-blur-sm">2025
+                                            • 4h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Justiça Socioambiental - Uma proposta interdisciplinar (Matemática e Geografia)</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                A oficina propõe uma reflexão sobre a justiça socioambiental e apresenta possibilidades
+                                de abordagem para a temática, ressaltando a relação entre sociedade e meio ambiente,
+                                articulando Matemática e Geografia.
+                            </p>
+                        </div>
+
+                        <div
+                            class="pt-4 border-t border-outline-variant flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2 text-secondary font-semibold text-sm">
+                                <span class="material-symbols-outlined text-lg icon-accent-hover">group</span>
+                                <span>70+ Professores</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://drive.google.com/file/d/1XlaKvlyDQQyeSPYL_oyqTez54VfRB1R1/view"
+                                target="_blank" rel="noopener noreferrer">
+                                ACESSAR MATERIAL <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Workshop Card 2 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-150">
+                        <div>
+                            <!-- Header Thumbnail Cover -->
+                            <div
+                                class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    style="background-image: url('img/etno.jpg')">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/30 flex flex-col justify-between p-4 pointer-events-none">
+                                    <div class="flex justify-between items-center">
+                                        <span
+                                            class="bg-accent-warm text-white font-label-caps text-[10px] px-2.5 py-1 tracking-wider uppercase font-semibold">ÉTNICO-RACIAL</span>
+                                        <span
+                                            class="bg-primary/90 text-white font-mono-metric text-xs px-2.5 py-0.5 rounded font-semibold backdrop-blur-sm">2025
+                                            • 4h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                A Temática Étnico-Racial nas Aulas de Matemática</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Oferece subsídios teóricos e práticos para que educadores integrem a história e a
+                                cultura africana, afro-brasileira e indígena diretamente às aulas de Matemática, em
+                                cumprimento às Leis 10.639/03 e 11.645/08.
+                            </p>
+                        </div>
+
+                        <div
+                            class="pt-4 border-t border-outline-variant flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2 text-secondary font-semibold text-sm">
+                                <span class="material-symbols-outlined text-lg icon-accent-hover">group</span>
+                                <span>140+ Professores</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://drive.google.com/file/d/1-hteYGITfnRuIU2XlL4M2qVqv-S0jLZd/view"
+                                target="_blank" rel="noopener noreferrer">
+                                ACESSAR MATERIAL <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Workshop Card 3 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-200">
+                        <div>
+                            <!-- Header Thumbnail Cover -->
+                            <div
+                                class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    style="background-image: url('img/funcao.jpg')">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/30 flex flex-col justify-between p-4 pointer-events-none">
+                                    <div class="flex justify-between items-center">
+                                        <span
+                                            class="bg-accent-warm text-white font-label-caps text-[10px] px-2.5 py-1 tracking-wider uppercase font-semibold">REPRESENTAÇÕES</span>
+                                        <span
+                                            class="bg-primary/90 text-white font-mono-metric text-xs px-2.5 py-0.5 rounded font-semibold backdrop-blur-sm">2023
+                                            • 4h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Ensino de Funções: Um olhar a partir do trabalho com as diversas representações</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                A oficina propôs uma breve reflexão sobre o conceito de função, suas diferentes
+                                representações, os registros de representações semióticas, bem como o uso de
+                                tecnologias, jogos e outros recursos.
+                            </p>
+                        </div>
+
+                        <div
+                            class="pt-4 border-t border-outline-variant flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2 text-secondary font-semibold text-sm">
+                                <span class="material-symbols-outlined text-lg icon-accent-hover">group</span>
+                                <span>120+ Professores</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://drive.google.com/file/d/1JuSX6vVDHYVI8LhL85rGYqDaV0LHNwsI/view"
+                                target="_blank" rel="noopener noreferrer">
+                                ACESSAR MATERIAL <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Workshop Card 4 -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-6 flex flex-col justify-between group reveal-on-scroll delay-250">
+                        <div>
+                            <!-- Header Thumbnail Cover -->
+                            <div
+                                class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant">
+                                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    style="background-image: url('img/letramentoestatistico.jpg')">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/30 flex flex-col justify-between p-4 pointer-events-none">
+                                    <div class="flex justify-between items-center">
+                                        <span
+                                            class="bg-accent-warm text-white font-label-caps text-[10px] px-2.5 py-1 tracking-wider uppercase font-semibold">ESTATÍSTICA</span>
+                                        <span
+                                            class="bg-primary/90 text-white font-mono-metric text-xs px-2.5 py-0.5 rounded font-semibold backdrop-blur-sm">2023
+                                            • 4h</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Prática Pedagógica, Partilha e Possibilidades em Letramento Estatístico</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Foram abordadas questões ligadas ao letramento estatístico, temas emergentes,
+                                ferramentas para trabalho em sala de aula e sugestões de atividades envolvendo softwares
+                                livres.
+                            </p>
+                        </div>
+
+                        <div
+                            class="pt-4 border-t border-outline-variant flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2 text-secondary font-semibold text-sm">
+                                <span class="material-symbols-outlined text-lg icon-accent-hover">group</span>
+                                <span>210+ Professores</span>
+                            </div>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://drive.google.com/file/d/1CAZRb_fWsQmn5c2LlQlpMGaTjnj6ZNKz/view"
+                                target="_blank" rel="noopener noreferrer">
+                                ACESSAR MATERIAL <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 04: Publicações -->
+        <section
+            class="nav-anchor section-transition py-24 md:py-32 border-t border-outline-variant relative w-full px-margin-mobile md:px-gutter"
+            id="publications">
+            <div class="max-w-max-width mx-auto relative">
+                <div class="reveal-on-scroll">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-4 text-center md:text-left"><span
+                            class="text-accent-warm font-mono-metric mr-3 opacity-90">04 /</span>Publicações</h2>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant mb-16 max-w-2xl text-center md:text-left">
+                        Produções acadêmicas, dissertação de mestrado, artigos e capítulos de livros publicados na área
+                        de
+                        Educação Matemática e Tecnologias.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Publication 1: Dissertação de Mestrado -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-8 flex flex-col justify-between group reveal-on-scroll delay-100">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span
+                                    class="bg-primary text-on-primary font-label-caps text-[11px] px-3 py-1 font-semibold uppercase tracking-wider group-hover:bg-accent-warm transition-colors">DISSERTAÇÃO
+                                    DE MESTRADO</span>
+                                <span class="font-mono-metric text-mono-metric text-secondary font-bold">2022</span>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Registros de Representação Semiótica da Função Afim em Livros Didáticos do 9° Ano do
+                                Ensino Fundamental</h3>
+                            <p class="font-mono-metric text-xs text-on-surface-variant mb-2 uppercase tracking-wide">
+                                📍 UFPE — Programa de Pós-Graduação em Educação Matemática e Tecnológica (EDUMATEC)
+                            </p>
+                            <p class="text-xs text-secondary font-medium mb-4">
+                                🎓 Orientadora: Profª. Dra. Rosinalda Aurora de Melo Teles
+                            </p>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Pesquisa de mestrado que analisa como a função afim é abordada em livros didáticos do 9º
+                                ano sob a ótica da Teoria dos Registros de Representação Semiótica.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+                            <span class="text-xs font-label-caps text-on-surface-variant font-semibold">UFPE /
+                                EDUMATEC</span>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://repositorio.ufpe.br/jspui/bitstream/123456789/47219/1/DISSERTA%C3%87%C3%83O%20Saulo%20Augusto%20Coimbra%20Santos%20da%20Silva.pdf"
+                                target="_blank" rel="noopener noreferrer">
+                                BAIXAR DISSERTAÇÃO (PDF) <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">download</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Publication 2: TCC de Graduação -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-8 flex flex-col justify-between group reveal-on-scroll delay-150">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-[11px] px-3 py-1 font-semibold uppercase tracking-wider group-hover:bg-accent-warm group-hover:text-white transition-colors">TRABALHO
+                                    DE CONCLUSÃO (TCC)</span>
+                                <span class="font-mono-metric text-mono-metric text-secondary font-bold">2016</span>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Criptografia em Curvas Elíticas</h3>
+                            <p class="font-mono-metric text-xs text-on-surface-variant mb-2 uppercase tracking-wide">
+                                📍 UFPE — Licenciatura em Matemática
+                            </p>
+                            <p class="text-xs text-secondary font-medium mb-4">
+                                🎓 Orientador: Profº Dr. Antônio Carlos Rodrigues Monteiro
+                            </p>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Trabalho de conclusão de curso com estudo aprofundado sobre fundamentos algébricos e
+                                aplicações de curvas elíticas no campo da segurança e criptografia.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+                            <span class="text-xs font-label-caps text-on-surface-variant font-semibold">UFPE /
+                                GRADUAÇÃO</span>
+                            <span class="text-xs font-label-caps text-outline font-semibold">ARQUIVO FÍSICO /
+                                LOCAL</span>
+                        </div>
+                    </article>
+
+                    <!-- Publication 3: Artigo em Anais de Evento -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-8 flex flex-col justify-between group reveal-on-scroll delay-200">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span
+                                    class="bg-surface-variant text-on-surface-variant font-label-caps text-[11px] px-3 py-1 font-semibold uppercase tracking-wider group-hover:bg-accent-warm group-hover:text-white transition-colors">ARTIGO
+                                    EM ANAIS DE EVENTO</span>
+                                <span class="font-mono-metric text-mono-metric text-secondary font-bold">2022</span>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Registros de Representação Semiótica da Função Afim em Livros Didáticos do 9º Ano do
+                                Ensino Fundamental
+                            </h3>
+                            <p class="font-mono-metric text-xs text-on-surface-variant mb-4 uppercase tracking-wide">
+                                📍 Anais do XXV EBRAPEM (Encontro Brasileiro de Estudantes de Pós-Graduação em Educação
+                                Matemática)
+                            </p>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Artigo publicado nos anais do XXV EBRAPEM, apresentando análises sobre as conversões e
+                                tratamentos dos registros semióticos da função afim em coleções didáticas.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+                            <span class="text-xs font-label-caps text-on-surface-variant font-semibold">EBRAPEM /
+                                ANAIS</span>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://www.even3.com.br/anais/xxvebrapem/454558-registros-de-representacao-semiotica-da-funcao-afim-em-livros-didaticos-do-9-ano-do-ensino-fundamental/"
+                                target="_blank" rel="noopener noreferrer">
+                                VER ARTIGO (EVEN3) <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Publication 4: Artigo em Revista Científica -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-8 flex flex-col justify-between group reveal-on-scroll delay-250">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-label-caps text-[11px] px-3 py-1 font-semibold uppercase tracking-wider group-hover:bg-accent-warm group-hover:text-white transition-colors">ARTIGO
+                                    EM REVISTA CIENTÍFICA</span>
+                                <span class="font-mono-metric text-mono-metric text-secondary font-bold">2026</span>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Abordagem da Função Afim em Livros Didáticos do 9° Ano do Ensino Fundamental: À Luz da
+                                Teoria de Registros de Representação Semiótica</h3>
+                            <p class="font-mono-metric text-xs text-on-surface-variant mb-4 uppercase tracking-wide">
+                                📍 RECM — Revista de Ensino de Ciências e Matemática
+                            </p>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Publicação científica detalhando a investigação sobre as representações gráficas,
+                                algébricas e tabulares de função afim presentes no material curricular do ensino
+                                fundamental.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+                            <span class="text-xs font-label-caps text-on-surface-variant font-semibold">RECM /
+                                PERIÓDICO</span>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://granrio.emnuvens.com.br/recm/article/view/7627" target="_blank"
+                                rel="noopener noreferrer">
+                                ACESSAR ARTIGO (RECM) <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Publication 5: Capítulo de Livro -->
+                    <article
+                        class="card-border card-hover bg-surface-bright p-8 flex flex-col justify-between group reveal-on-scroll delay-300 md:col-span-2 lg:col-span-2">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span
+                                    class="bg-tertiary-container text-on-tertiary-container font-label-caps text-[11px] px-3 py-1 font-semibold uppercase tracking-wider group-hover:bg-accent-warm group-hover:text-white transition-colors">CAPÍTULO
+                                    DE LIVRO</span>
+                                <span class="font-mono-metric text-mono-metric text-secondary font-bold">2024</span>
+                            </div>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-accent-warm transition-colors">
+                                Conversões entre registros gráfico e algébrico da função afim: duas perspectivas em
+                                diálogo</h3>
+                            <p class="font-mono-metric text-xs text-on-surface-variant mb-2 uppercase tracking-wide">
+                                📖 Livro: Aspectos Conceituais, Cognitivos e Didáticos de Função
+                            </p>
+                            <p class="text-xs text-secondary font-medium mb-4">
+                                👥 Coautores: José Robson de Araújo e Rosinalda Aurora de Melo Teles
+                            </p>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Capítulo publicado pela Editora UFPE explorando diálogos conceituais e práticas sobre a
+                                conversão entre representações gráficas e algébricas no ensino e aprendizagem de
+                                funções.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+                            <span class="text-xs font-label-caps text-on-surface-variant font-semibold">EDITORA
+                                UFPE</span>
+                            <a class="inline-flex items-center text-primary font-label-caps text-xs group-hover:text-accent-warm hover:text-accent-warm transition-colors font-bold"
+                                href="https://editora.ufpe.br/books/catalog/book/917" target="_blank"
+                                rel="noopener noreferrer">
+                                ACESSAR LIVRO (EDITORA UFPE) <span
+                                    class="material-symbols-outlined ml-1 text-sm icon-accent-hover">menu_book</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 05: Matriz de Habilidades -->
+        <section
+            class="nav-anchor section-transition py-24 md:py-32 border-t border-outline-variant relative w-full px-margin-mobile md:px-gutter"
+            id="skills">
+            <div class="max-w-max-width mx-auto relative">
+                <h2
+                    class="font-headline-md text-headline-md text-primary mb-12 text-center md:text-left reveal-on-scroll">
+                    <span class="text-accent-warm font-mono-metric mr-3 opacity-90">05 /</span>Habilidades
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div
+                        class="card-border card-hover p-6 flex flex-col items-center justify-center text-center bg-surface-bright transition-colors group reveal-on-scroll delay-75">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4 icon-accent-hover"
+                            data-icon="terminal" style="font-variation-settings: 'FILL' 0;">terminal</span>
+                        <span
+                            class="font-label-caps text-label-caps text-on-surface group-hover:text-accent-warm transition-colors font-semibold">GOOGLE
+                            SUITE, APPS SCRIPT;
+                            PYTHON</span>
+                    </div>
+                    <div
+                        class="card-border card-hover p-6 flex flex-col items-center justify-center text-center bg-surface-bright transition-colors group reveal-on-scroll delay-150">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4 icon-accent-hover"
+                            data-icon="code" style="font-variation-settings: 'FILL' 0;">code</span>
+                        <span
+                            class="font-label-caps text-label-caps text-on-surface group-hover:text-accent-warm transition-colors font-semibold">HTML,
+                            CSS, JS;
+                            BOOTSTRAP</span>
+                    </div>
+                    <div
+                        class="card-border card-hover p-6 flex flex-col items-center justify-center text-center bg-surface-bright transition-colors group reveal-on-scroll delay-200">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4 icon-accent-hover"
+                            data-icon="account_tree" style="font-variation-settings: 'FILL' 0;">account_tree</span>
+                        <span
+                            class="font-label-caps text-label-caps text-on-surface group-hover:text-accent-warm transition-colors font-semibold">RACIOCÍNIO
+                            LÓGICO</span>
+                    </div>
+                    <div
+                        class="card-border card-hover p-6 flex flex-col items-center justify-center text-center bg-surface-bright transition-colors group reveal-on-scroll delay-250">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4 icon-accent-hover"
+                            data-icon="design_services"
+                            style="font-variation-settings: 'FILL' 0;">design_services</span>
+                        <span
+                            class="font-label-caps text-label-caps text-on-surface group-hover:text-accent-warm transition-colors font-semibold">UI/UX</span>
+                    </div>
+                    <div
+                        class="card-border card-hover p-6 flex flex-col items-center justify-center text-center bg-surface-bright transition-colors group reveal-on-scroll delay-300">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4 icon-accent-hover"
+                            data-icon="palette" style="font-variation-settings: 'FILL' 0;">palette</span>
+                        <span
+                            class="font-label-caps text-label-caps text-on-surface group-hover:text-accent-warm transition-colors font-semibold">CANVA
+                            E PHOTOSHOP</span>
+                    </div>
+                    <div
+                        class="card-border card-hover p-6 flex flex-col items-center justify-center text-center bg-surface-bright transition-colors group reveal-on-scroll delay-350">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4 icon-accent-hover"
+                            data-icon="psychology" style="font-variation-settings: 'FILL' 0;">psychology</span>
+                        <span
+                            class="font-label-caps text-label-caps text-on-surface group-hover:text-accent-warm transition-colors font-semibold">DASHBOARDS
+                            E SISTEMAS COM
+                            IA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container dark:bg-tertiary-container text-secondary dark:text-secondary-fixed font-body-md text-body-md w-full py-12 border-t border-outline-variant dark:border-on-tertiary-container flat no shadows linear transition-all">
+        <div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-4">
+            <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">SAULO COIMBRA</div>
+            <div class="text-on-surface-variant text-sm opacity-80">© 2026 Saulo Coimbra. Todos os direitos reservados.
+            </div>
+            <div class="flex gap-6 font-label-caps text-label-caps">
+                <a class="text-on-surface-variant hover:text-accent-warm transition-colors font-semibold"
+                    href="https://github.com/saulocoimbraa" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="text-on-surface-variant hover:text-accent-warm transition-colors font-semibold"
+                    href="mailto:saulo.acsilva@professor.educacao.pe.gov.br">E-mail</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Three.js Scene implementation for Hero Background
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById('threejs-hero-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            const geometries = [
+                new THREE.TetrahedronGeometry(3),
+                new THREE.BoxGeometry(3, 3, 3),
+                new THREE.OctahedronGeometry(3),
+                new THREE.DodecahedronGeometry(3),
+                new THREE.IcosahedronGeometry(3)
+            ];
+
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x73787b,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.6
+            });
+
+            const meshes = [];
+
+            // Specific well-spaced coordinates: Top-left, Top-right, Center-left, Center-right, Bottom-center
+            const positions = [
+                { x: -25, y: 15, z: -5 },
+                { x: 25, y: 15, z: -5 },
+                { x: -30, y: -5, z: -5 },
+                { x: 30, y: -5, z: -5 },
+                { x: 0, y: -18, z: -5 }
+            ];
+
+            geometries.forEach((geometry, i) => {
+                const mesh = new THREE.Mesh(geometry, material);
+
+                mesh.position.set(positions[i].x, positions[i].y, positions[i].z);
+                mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+
+                const rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.01,
+                    y: (Math.random() - 0.5) * 0.01,
+                    z: (Math.random() - 0.5) * 0.01
+                };
+
+                meshes.push({ mesh, rotationSpeed });
+                scene.add(mesh);
+            });
+
+            camera.position.z = 30;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                meshes.forEach(obj => {
+                    obj.mesh.rotation.x += obj.rotationSpeed.x;
+                    obj.mesh.rotation.y += obj.rotationSpeed.y;
+                    obj.mesh.rotation.z += obj.rotationSpeed.z;
+                });
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            function updateThreeLayout() {
+                if (!container || !renderer || !camera) return;
+                const aspect = container.clientWidth / container.clientHeight;
+                camera.aspect = aspect;
+                // Em telas móveis/verticais (aspect < 1), recua a câmera proporcionalmente para manter todos os poliedros no campo de visão
+                camera.position.z = aspect < 1 ? Math.min(46, 28 / Math.max(aspect, 0.45)) : 30;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            }
+            updateThreeLayout();
+
+            window.addEventListener('resize', updateThreeLayout);
+        });
+    </script>
+    <script>
+        // Efeitos ao rolar a página: Parallax 3D e Parallax da Foto (deslocamento fluido + surgir/sumir)
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroBg = document.getElementById('threejs-hero-container');
+            const photoContainer = document.getElementById('parallax-photo-container');
+            const heroSection = document.getElementById('home');
+
+            function handleScroll() {
+                const scrolled = window.scrollY;
+
+                // Parallax 3D do background
+                if (heroBg) {
+                    heroBg.style.transform = `translateY(${scrolled * 0.32}px)`;
+                }
+
+                // Parallax da foto (harmônico em todas as resoluções)
+                if (photoContainer && heroSection) {
+                    const heroHeight = heroSection.offsetHeight || 600;
+                    const scrollRatio = Math.min(Math.max(scrolled / (heroHeight * 0.9), 0), 1);
+
+                    const isMobile = window.innerWidth < 768;
+                    const baseOpacity = 1.0;
+
+                    // No mobile: deslocamento vertical suave (translateY) sem sobrepor controles
+                    // No desktop/tablet: deslocamento combinado refinado (translateY + translateX)
+                    const translateY = scrolled * (isMobile ? 0.18 : 0.32);
+                    const translateX = isMobile ? 0 : scrolled * 0.18;
+
+                    // Desvanecimento suave ao rolar além da Hero Section
+                    const opacity = Math.max(0, (1 - Math.pow(scrollRatio, 1.3)) * baseOpacity);
+
+                    photoContainer.style.transform = `translate3d(${translateX.toFixed(2)}px, ${translateY.toFixed(2)}px, 0)`;
+                    photoContainer.style.opacity = opacity.toFixed(3);
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            window.addEventListener('resize', handleScroll, { passive: true });
+            handleScroll();
+        });
+    </script>
+    <script>
+        // ScrollSpy: Atualização dinâmica do menu de navegação conforme a seção visível
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('#nav-links .nav-item');
+
+            if (!sections.length || !navLinks.length) return;
+
+            const activeClasses = ['text-primary', 'dark:text-primary-fixed', 'border-accent-warm', 'font-semibold'];
+            const inactiveClasses = ['text-on-surface-variant', 'dark:text-on-tertiary-container', 'border-transparent'];
+
+            function setActiveLink(activeId) {
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${activeId}`) {
+                        link.classList.remove(...inactiveClasses);
+                        link.classList.add(...activeClasses);
+                    } else {
+                        link.classList.remove(...activeClasses);
+                        link.classList.add(...inactiveClasses);
+                    }
+                });
+            }
+
+            function onScroll() {
+                const scrollPosition = window.scrollY + 140; // compensa a altura da navbar sticky
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+
+                // Se chegou ao final da página, destaca a última seção ativa
+                if (window.scrollY + windowHeight >= documentHeight - 50) {
+                    const lastSection = sections[sections.length - 1];
+                    if (lastSection) {
+                        setActiveLink(lastSection.id);
+                        return;
+                    }
+                }
+
+                let currentSectionId = sections[0].id;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                setActiveLink(currentSectionId);
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll, { passive: true });
+            onScroll(); // Verifica o estado no carregamento inicial
+        });
+    </script>
+    <script>
+        // Scroll Reveal Observer: Animações suaves nas transições e elementos ao entrar na tela
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal-on-scroll, .section-transition');
+
+            if (!('IntersectionObserver' in window)) {
+                // Fallback para navegadores legados sem suporte a IntersectionObserver
+                revealElements.forEach(el => el.classList.add('is-revealed'));
+                return;
+            }
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        observer.unobserve(entry.target); // Revela uma vez e mantém com alta performance
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.08,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Revela imediatamente elementos visíveis no topo da página
+            setTimeout(() => {
+                const homeElements = document.querySelectorAll('#home .reveal-on-scroll');
+                homeElements.forEach(el => el.classList.add('is-revealed'));
+            }, 80);
+        });
+    </script>
+</body>
+
+</html>
